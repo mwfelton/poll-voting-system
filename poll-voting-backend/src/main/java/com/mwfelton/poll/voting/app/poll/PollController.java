@@ -34,10 +34,8 @@ public class PollController {
         return ResponseEntity.ok(savedPoll);
     }
 
-    @GetMapping
+    @GetMapping("/allPolls")
     public List<Poll> getAllPolls() {
-        // This method returns all the polls in the database
-
         return pollRepository.findAll(); // pollRepository.findAll() retrieves all polls
     }
 

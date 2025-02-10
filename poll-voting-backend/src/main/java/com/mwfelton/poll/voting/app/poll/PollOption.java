@@ -1,5 +1,6 @@
 package com.mwfelton.poll.voting.app.poll;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.UUID;
@@ -13,6 +14,7 @@ public class PollOption {
     private UUID id;
 
     @ManyToOne // Many options belong to one poll
+    @JsonIgnore
     @JoinColumn(name = "poll_id")
     private Poll poll;
 
