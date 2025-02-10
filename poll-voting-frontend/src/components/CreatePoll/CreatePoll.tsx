@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Button from "../Button/Button";  // Using the Button component
 import styles from "./CreatePoll.module.css";
+import { createPoll } from "../../api/createPollsAPI";
 
 interface CreatePollProps {
     setShowCreatePoll: React.Dispatch<React.SetStateAction<boolean>>; // Function to change state in Home component
@@ -31,16 +32,21 @@ const CreatePoll: React.FC<CreatePollProps> = ({ setShowCreatePoll }) => {
     }
   };
 
-  const handleSubmit = () => {
-    // Validation for poll name and options
+  const handleSubmit = async () => {
     if (!pollName.trim() || options.some((option) => !option.trim())) {
       setError("Poll name and all options must be filled.");
       return;
     }
-
+  
     setError("");
-    // Placeholder logic for poll submission (API call)
-    console.log("Poll Created:", { pollName, options });
+  
+    try {
+      await createPoll(pollName, options);
+      console.log("Poll successfully created!");
+      setShowCreatePoll(false); 
+    } catch (error) {
+      setError("Failed to create poll. Please try again.");
+    }
   };
 
 return (
