@@ -1,5 +1,6 @@
 const API_URL = "http://localhost:8080/polls";
 
+
 export const fetchPolls = async () => {
     try {
       const response = await fetch(`${API_URL}/allPolls`);
