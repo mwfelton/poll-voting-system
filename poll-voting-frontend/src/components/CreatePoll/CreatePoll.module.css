@@ -1,5 +1,3 @@
-/* src/components/CreatePoll/CreatePoll.module.css */
-
 .createPollContainer {
     display: flex;
     flex-direction: column;
@@ -13,44 +11,61 @@
     max-width: 500px;
     margin: 0 auto;
   }
+
+  .removeOptionButton {
+    background: none;
+    border: none;
+    margin-bottom: 10px;
+  }
   
-  h2 {
+  /* h2 {
     font-size: 24px;
     font-weight: bold;
     color: #333;
     margin-bottom: 20px;
-  }
+  } */
   
   .formGroup {
     width: 100%;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
   }
   
   .formGroup label {
-    font-size: 16px;
+    /* font-size: 16px; */
+    width: 100%;
     color: #555;
     margin-bottom: 5px;
+  }
+
+  .formGroup {
+    /* font-size: 16px; */
+    width: 100%;
+    color: #555;
   }
   
   .inputField {
     width: 100%;
     padding: 10px;
-    font-size: 16px;
+    /* font-size: 16px; */
     border-radius: 5px;
     border: 1px solid #ccc;
     margin-bottom: 10px;
+    box-sizing: border-box; /* Ensures padding is included in width calculation */
   }
   
   .optionsContainer {
     width: 100%;
-    margin-bottom: 15px;
   }
   
   .optionGroup {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
+  }
+
+  .buttonContainer {
+    display: flex;
   }
   
   .addOptionButton {
@@ -58,18 +73,18 @@
     color: white;
     border: none;
     padding: 10px 20px;
-    font-size: 16px;
+    /* font-size: 16px; */
     cursor: pointer;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-right: 10px;
   }
   
   .submitButton {
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 12px 20px;
-    font-size: 16px;
+    padding: 10px 20px;
+    /* font-size: 16px; */
     cursor: pointer;
     border-radius: 5px;
   }

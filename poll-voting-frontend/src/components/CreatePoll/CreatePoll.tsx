@@ -1,12 +1,12 @@
-// src/components/CreatePoll/CreatePoll.tsx
 import React, { useState } from "react";
 import Button from "../Button/Button";  // Using the Button component
 import styles from "./CreatePoll.module.css";
 import { createPoll } from "../../api/createPollsAPI";
+import { FaTimes } from "react-icons/fa";  // Import the X icon
 
 interface CreatePollProps {
-    setShowCreatePoll: React.Dispatch<React.SetStateAction<boolean>>; // Function to change state in Home component
-  }
+  setShowCreatePoll: React.Dispatch<React.SetStateAction<boolean>>; // Function to change state in Home component
+}
 
 const CreatePoll: React.FC<CreatePollProps> = ({ setShowCreatePoll }) => {
   const [pollName, setPollName] = useState<string>("");
@@ -37,9 +37,9 @@ const CreatePoll: React.FC<CreatePollProps> = ({ setShowCreatePoll }) => {
       setError("Poll name and all options must be filled.");
       return;
     }
-  
+
     setError("");
-  
+
     try {
       await createPoll(pollName, options);
       console.log("Poll successfully created!");
@@ -49,21 +49,21 @@ const CreatePoll: React.FC<CreatePollProps> = ({ setShowCreatePoll }) => {
     }
   };
 
-return (
+  return (
     <div className={styles.createPollContainer}>
-        <h2>Create a Poll</h2>
-        <div className={styles.formGroup}>
-            <label>Poll Name</label>
-            <input
-                type="text"
-                value={pollName}
-                onChange={(e) => setPollName(e.target.value)}
-                className={styles.inputField}
-            />
-        </div>
+      <div className={styles.formGroup}>
+        {/* <label>Poll Name</label> */}
+        <input
+          type="text"
+          value={pollName}
+          onChange={(e) => setPollName(e.target.value)}
+          className={styles.inputField}
+          placeholder={`What's Your Question?`}
+        />
+      </div>
 
-        <div className={styles.optionsContainer}>
-        <label>Poll Options</label>
+      <div className={styles.optionsContainer}>
+        {/* <label>Poll Options</label> */}
         {options.map((option, index) => (
           <div key={index} className={styles.optionGroup}>
             <input
@@ -74,35 +74,32 @@ return (
               placeholder={`Option ${index + 1}`}
             />
             {options.length > 2 && (
-              <Button
-                text="Remove"
+              <button
+                className={styles.removeOptionButton} // Style the button as you like
                 onClick={() => handleRemoveOption(index)}
-                className={styles.removeOptionButton}
-              />
+              >
+                <FaTimes />
+
+              </button>
             )}
           </div>
         ))}
       </div>
 
+      {error && <p className={styles.errorMessage}>{error}</p>}
+
+      <div className={styles.buttonContainer}>
         <Button
-            text="Add Option"
-            onClick={handleAddOption}
-            className={styles.addOptionButton}
-            // disabled={options.length >= 7} 
+          text="Add Option"
+          onClick={handleAddOption}
+          className={styles.addOptionButton}
         />
-
-        {error && <p className={styles.errorMessage}>{error}</p>}
-
         <Button
-            text="Create"
-            onClick={handleSubmit}
-            className={styles.submitButton}
+          text="Create"
+          onClick={handleSubmit}
+          className={styles.submitButton}
         />
-
-       <Button
-            text="Back to Home"
-            onClick={() => setShowCreatePoll(false)}
-        />
+      </div>
     </div>
   );
 };

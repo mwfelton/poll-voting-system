@@ -1,4 +1,3 @@
-// src/components/Poll/Poll.tsx
 import React from "react";
 import styles from "./Poll.module.css";
 

@@ -1,0 +1,79 @@
+  .pollList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Flexible grid */
+    gap: 12px;
+    width: 100%;
+    max-width: 400px; /* Adjust based on design */
+    justify-content: center; /* Center content horizontally */
+  }
+  
+  .pollButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 120px; /* Ensure consistent button width */
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    padding-bottom: 20px; /* Prevent it from touching the screen edge */
+  }  
+  
+  .title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .pollButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .noPolls {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .backButton {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .backButton:hover {
+    background-color: #cc0000;
+  }
+
+  .deleteAllButton {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }  
+    
+  .deleteAllButton:hover {
+    background-color: darkred;
+  }
+  
+  
+  

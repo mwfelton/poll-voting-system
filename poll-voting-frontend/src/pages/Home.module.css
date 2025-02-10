@@ -1,20 +1,68 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f3f4f6;
-    padding: 1rem;
-  }
-  
-  .title {
-    margin-bottom: 2rem;
-    font-size: 1.875rem; 
-    font-weight: 700; 
-    color: #374151; 
-  }
-  
-  .buttonContainer {
-    margin-top: 1rem;
-  }
-  
+/* src/pages/Home.module.css */
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+}
+
+.title {
+  flex: 0; /* Keeps the title fixed at the top */
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pageButtons {
+  padding: 0.75rem 1.5rem;
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+  margin-bottom:10px;
+  width: 150px;
+}
+
+.mainContent {
+  flex: 1; /* Takes up the remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+}
+
+.pollList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.errorMessage {
+  color: red;
+}
+
+.homeButtonContainer {
+  flex: 0; /* Keeps the button fixed at the bottom */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.homeButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.homeButton:hover {
+  background-color: #f0f0f0;
+}
