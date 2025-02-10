@@ -1,8 +1,10 @@
 com/mwfelton/poll/voting/app/Poll/Poll.class
+com/mwfelton/poll/voting/app/PollVotingAppApplication$CorsConfig$1.class
 com/mwfelton/poll/voting/app/Poll/PollController.class
 com/mwfelton/poll/voting/app/Poll/PollRepository.class
 com/mwfelton/poll/voting/app/PollVotingAppApplication.class
 com/mwfelton/poll/voting/app/Poll/PollOption.class
 com/mwfelton/poll/voting/app/Poll/PollRequest$PollOptionRequest.class
+com/mwfelton/poll/voting/app/PollVotingAppApplication$CorsConfig.class
 com/mwfelton/poll/voting/app/Poll/PollOptionRepository.class
 com/mwfelton/poll/voting/app/Poll/PollRequest.class
