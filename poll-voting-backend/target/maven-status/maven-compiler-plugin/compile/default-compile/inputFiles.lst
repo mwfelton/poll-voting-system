@@ -1,7 +1,7 @@
-/Users/milesfelton/poll-voting-system/poll-voting-backend/src/main/java/com/mwfelton/poll/voting/app/Poll/Poll.java
-/Users/milesfelton/poll-voting-system/poll-voting-backend/src/main/java/com/mwfelton/poll/voting/app/Poll/PollController.java
-/Users/milesfelton/poll-voting-system/poll-voting-backend/src/main/java/com/mwfelton/poll/voting/app/Poll/PollOption.java
-/Users/milesfelton/poll-voting-system/poll-voting-backend/src/main/java/com/mwfelton/poll/voting/app/Poll/PollOptionRepository.java
-/Users/milesfelton/poll-voting-system/poll-voting-backend/src/main/java/com/mwfelton/poll/voting/app/Poll/PollRepository.java
-/Users/milesfelton/poll-voting-system/poll-voting-backend/src/main/java/com/mwfelton/poll/voting/app/Poll/PollRequest.java
 /Users/milesfelton/poll-voting-system/poll-voting-backend/src/main/java/com/mwfelton/poll/voting/app/PollVotingAppApplication.java
+/Users/milesfelton/poll-voting-system/poll-voting-backend/src/main/java/com/mwfelton/poll/voting/app/poll/Poll.java
+/Users/milesfelton/poll-voting-system/poll-voting-backend/src/main/java/com/mwfelton/poll/voting/app/poll/PollController.java
+/Users/milesfelton/poll-voting-system/poll-voting-backend/src/main/java/com/mwfelton/poll/voting/app/poll/PollOption.java
+/Users/milesfelton/poll-voting-system/poll-voting-backend/src/main/java/com/mwfelton/poll/voting/app/poll/PollOptionRepository.java
+/Users/milesfelton/poll-voting-system/poll-voting-backend/src/main/java/com/mwfelton/poll/voting/app/poll/PollRepository.java
+/Users/milesfelton/poll-voting-system/poll-voting-backend/src/main/java/com/mwfelton/poll/voting/app/poll/PollRequest.java

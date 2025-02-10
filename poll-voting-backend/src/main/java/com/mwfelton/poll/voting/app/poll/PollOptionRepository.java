@@ -1,4 +1,4 @@
-package com.mwfelton.poll.voting.app.Poll;
+package com.mwfelton.poll.voting.app.poll;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
