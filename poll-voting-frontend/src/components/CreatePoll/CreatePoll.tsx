@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import Button from "../Button/Button";  // Using the Button component
+import Button from "../Button/Button";
 import styles from "./CreatePoll.module.css";
 import { createPoll } from "../../api/createPollsAPI";
-import { FaTimes } from "react-icons/fa";  // Import the X icon
+import { FaTimes } from "react-icons/fa";
 
 interface CreatePollProps {
-  setShowCreatePoll: React.Dispatch<React.SetStateAction<boolean>>; // Function to change state in Home component
+  setShowCreatePoll: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const CreatePoll: React.FC<CreatePollProps> = ({ setShowCreatePoll }) => {
   const [pollName, setPollName] = useState<string>("");
-  const [options, setOptions] = useState<string[]>(["", ""]); // Initial 2 empty options
+  const [options, setOptions] = useState<string[]>(["", ""]);
   const [error, setError] = useState<string>("");
 
   const handleOptionChange = (index: number, value: string) => {
@@ -75,11 +75,10 @@ const CreatePoll: React.FC<CreatePollProps> = ({ setShowCreatePoll }) => {
             />
             {options.length > 2 && (
               <button
-                className={styles.removeOptionButton} // Style the button as you like
+                className={styles.removeOptionButton}
                 onClick={() => handleRemoveOption(index)}
               >
                 <FaTimes />
-
               </button>
             )}
           </div>

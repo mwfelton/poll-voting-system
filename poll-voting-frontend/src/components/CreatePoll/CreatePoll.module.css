@@ -18,27 +18,17 @@
     margin-bottom: 10px;
   }
   
-  /* h2 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-  } */
-  
   .formGroup {
     width: 100%;
-    /* margin-bottom: 15px; */
   }
   
   .formGroup label {
-    /* font-size: 16px; */
     width: 100%;
     color: #555;
     margin-bottom: 5px;
   }
 
   .formGroup {
-    /* font-size: 16px; */
     width: 100%;
     color: #555;
   }
@@ -46,11 +36,10 @@
   .inputField {
     width: 100%;
     padding: 10px;
-    /* font-size: 16px; */
     border-radius: 5px;
     border: 1px solid #ccc;
     margin-bottom: 10px;
-    box-sizing: border-box; /* Ensures padding is included in width calculation */
+    box-sizing: border-box;
   }
   
   .optionsContainer {
@@ -61,7 +50,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* margin-bottom: 10px; */
   }
 
   .buttonContainer {
@@ -73,7 +61,6 @@
     color: white;
     border: none;
     padding: 10px 20px;
-    /* font-size: 16px; */
     cursor: pointer;
     border-radius: 5px;
     margin-right: 10px;
@@ -84,7 +71,6 @@
     color: white;
     border: none;
     padding: 10px 20px;
-    /* font-size: 16px; */
     cursor: pointer;
     border-radius: 5px;
   }
