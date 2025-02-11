@@ -4,6 +4,7 @@ import styles from "./Home.module.css";
 import CreatePoll from "../components/CreatePoll/CreatePoll";
 import AllPolls from "../components/AllPolls/AllPolls"; 
 import { fetchPolls } from "../api/fetchPollsAPI";
+import { deletePollAPI } from "../api/deletePollAPI";
 import Poll from "../components/Poll/Poll";
 import { FaHome } from "react-icons/fa";
 
@@ -21,16 +22,23 @@ const Home: React.FC = () => {
 
   const handleCreatePollClick = () => {
     setShowCreatePoll(true);
-    setShowAllPolls(false); // Hide AllPolls when CreatePoll is shown
+    setShowAllPolls(false);
   };
 
   const handleDeletePoll = async (pollId: string) => {
-    const response = await fetch(`/api/polls/${pollId}`, { method: "DELETE" });
-
-    if (response.ok) {
-      setPolls((prevPolls) => prevPolls.filter((poll) => poll.id !== pollId));
+    try {
+      const response = await deletePollAPI(pollId);
+  
+      if (response.ok) { // Now response is correctly returned and has .ok
+        setPolls((prevPolls) => prevPolls.filter((poll) => poll.id !== pollId));
+      } else {
+        console.error("Failed to delete poll");
+      }
+    } catch (error) {
+      console.error("Error deleting poll:", error);
     }
   };
+  
 
   const handleFetchPolls = async () => {
     setLoading(true);
@@ -44,29 +52,22 @@ const Home: React.FC = () => {
     setLoading(false);
   };
 
-  const handlePollClick = (poll: any) => {
-    setSelectedPoll(poll); // Set the selected poll
-    setShowAllPolls(false); // Hide AllPolls when a poll is selected
-  };
-
   const handleHomeClick = () => {
-    setSelectedPoll(null); // Reset to home view
+    setSelectedPoll(null);
     setShowCreatePoll(false);
-    setShowAllPolls(false); // Hide AllPolls on home view
+    setShowAllPolls(false);
   };
 
   const handleAllPollsClick = async () => {
-    // Fetch polls only when All Polls is clicked
     if (polls.length === 0) {
       await handleFetchPolls();
     }
     setShowAllPolls(true);
-    setShowCreatePoll(false); // Hide CreatePoll if showing AllPolls
+    setShowCreatePoll(false);
   };
 
   return (
     <div className={styles.pageContainer}>
-      {/* Title at the top */}
       <div className={styles.title}>
         <h1>Poll Party</h1>
       </div>
@@ -74,11 +75,9 @@ const Home: React.FC = () => {
       {/* Main content section */}
       <div className={styles.mainContent}>
         {showCreatePoll || selectedPoll || showAllPolls ? (
-          // Show Poll, CreatePoll, or AllPolls component based on state
           selectedPoll ? (
             <Poll poll={selectedPoll} />
           ) : showAllPolls ? (
-            // <AllPolls polls={polls} onPollClick={handlePollClick} />
             <AllPolls polls={polls} onPollClick={(poll) => console.log("Clicked:", poll)} onDeletePoll={handleDeletePoll} />
           ) : (
             <CreatePoll setShowCreatePoll={setShowCreatePoll} />

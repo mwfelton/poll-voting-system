@@ -1,12 +1,11 @@
-/* src/pages/Home.module.css */
 .pageContainer {
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
 }
 
 .title {
-  flex: 0; /* Keeps the title fixed at the top */
+  flex: 0;
   text-align: center;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -24,7 +23,7 @@
 }
 
 .mainContent {
-  flex: 1; /* Takes up the remaining space */
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,7 +44,7 @@
 }
 
 .homeButtonContainer {
-  flex: 0; /* Keeps the button fixed at the bottom */
+  flex: 0;
   display: flex;
   justify-content: center;
   align-items: center;
