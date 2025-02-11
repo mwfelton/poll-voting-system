@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/polls")
@@ -46,5 +47,15 @@ public class PollController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No poll found with that question.");
         }
         return ResponseEntity.ok(polls);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deletePoll(@PathVariable UUID id) {
+        return pollRepository.findById(id)
+                .map(poll -> {
+                    pollRepository.delete(poll);
+                    return ResponseEntity.ok().body("Poll deleted successfully");
+                })
+                .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).body("Poll not found"));
     }
 }
