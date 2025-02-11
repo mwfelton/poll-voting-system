@@ -39,7 +39,6 @@ const Home: React.FC = () => {
     }
   };
   
-
   const handleFetchPolls = async () => {
     setLoading(true);
     setError("");
@@ -65,7 +64,7 @@ const Home: React.FC = () => {
     setShowAllPolls(true);
     setShowCreatePoll(false);
   };
-
+  
   return (
     <div className={styles.pageContainer}>
       <div className={styles.title}>
