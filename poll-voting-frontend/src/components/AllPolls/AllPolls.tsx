@@ -16,10 +16,6 @@ type AllPollsProps = {
 const AllPolls: React.FC<AllPollsProps> = ({ polls, onPollClick, onDeletePoll }) => {
   const [deleteMode, setDeleteMode] = useState(false);
 
-  useEffect(() => {
-    fetchPolls();
-  }, []);
-
   const handleDeleteMode = () => {
     setDeleteMode(!deleteMode);
   };

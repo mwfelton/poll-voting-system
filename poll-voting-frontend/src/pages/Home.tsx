@@ -29,7 +29,7 @@ const Home: React.FC = () => {
     try {
       const response = await deletePollAPI(pollId);
   
-      if (response.ok) { // Now response is correctly returned and has .ok
+      if (response.ok) {
         setPolls((prevPolls) => prevPolls.filter((poll) => poll.id !== pollId));
       } else {
         console.error("Failed to delete poll");
@@ -78,7 +78,7 @@ const Home: React.FC = () => {
           selectedPoll ? (
             <Poll poll={selectedPoll} />
           ) : showAllPolls ? (
-            <AllPolls polls={polls} onPollClick={(poll) => console.log("Clicked:", poll)} onDeletePoll={handleDeletePoll} />
+            <AllPolls polls={polls} onPollClick={(poll) => setSelectedPoll(poll)} onDeletePoll={handleDeletePoll} />
           ) : (
             <CreatePoll setShowCreatePoll={setShowCreatePoll} />
           )

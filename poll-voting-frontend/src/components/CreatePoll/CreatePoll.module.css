@@ -1,8 +1,8 @@
-.createPollContainer {
+  .createPollContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     background-color: #f9f9f9;
     border-radius: 8px;
     padding: 20px;
@@ -10,8 +10,9 @@
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
+    max-height: 80vh;
+    overflow-y: auto;
   }
-
   .removeOptionButton {
     background: none;
     border: none;
