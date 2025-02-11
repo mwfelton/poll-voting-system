@@ -6,12 +6,14 @@ import { FaTimes } from "react-icons/fa";
 
 interface CreatePollProps {
   setShowCreatePoll: React.Dispatch<React.SetStateAction<boolean>>;
+  handleFetchPolls: () => void;
 }
 
-const CreatePoll: React.FC<CreatePollProps> = ({ setShowCreatePoll }) => {
+const CreatePoll: React.FC<CreatePollProps> = ({ setShowCreatePoll, handleFetchPolls }) => {
   const [pollName, setPollName] = useState<string>("");
   const [options, setOptions] = useState<string[]>(["", ""]);
   const [error, setError] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
 
   const handleOptionChange = (index: number, value: string) => {
     const updatedOptions = [...options];
@@ -37,13 +39,14 @@ const CreatePoll: React.FC<CreatePollProps> = ({ setShowCreatePoll }) => {
       setError("Poll name and all options must be filled.");
       return;
     }
-
     setError("");
 
     try {
       await createPoll(pollName, options);
-      console.log("Poll successfully created!");
-      setShowCreatePoll(false); 
+      setMessage("Poll created successfully!");
+      handleFetchPolls();
+      setPollName("");
+      setOptions(["", ""]);
     } catch (error) {
       setError("Failed to create poll. Please try again.");
     }
@@ -52,6 +55,7 @@ const CreatePoll: React.FC<CreatePollProps> = ({ setShowCreatePoll }) => {
   return (
     <div className={styles.createPollContainer}>
       <h3>Create Your Poll!</h3>
+      {message && <p className={styles.voteMessage}>{message}</p>}
       <div className={styles.formGroup}>
         {/* <label>Poll Name</label> */}
         <input

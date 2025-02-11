@@ -79,7 +79,7 @@ const Home: React.FC = () => {
           ) : showAllPolls ? (
             <AllPolls polls={polls} onPollClick={(poll) => setSelectedPoll(poll)} onDeletePoll={handleDeletePoll} />
           ) : (
-            <CreatePoll setShowCreatePoll={setShowCreatePoll} />
+            <CreatePoll setShowCreatePoll={setShowCreatePoll} handleFetchPolls={handleFetchPolls} />
           )
         ) : (
           <>

@@ -81,4 +81,11 @@
     font-size: 14px;
     margin-bottom: 15px;
   }
+
+  .voteMessage {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+  }
   

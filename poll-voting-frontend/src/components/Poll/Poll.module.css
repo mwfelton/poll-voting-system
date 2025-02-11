@@ -56,6 +56,12 @@
 
 .disabledButton {
   background-color: #d3d3d3;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.resultButton {
+  background-color: lightgreen !important;
 }
 
 .submitButton, .viewResultsButton {
