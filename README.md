@@ -61,3 +61,34 @@ This is a poll voting system where users can create polls, vote on existing poll
 ---
 This README will be updated as more features are implemented.
 
+
+# Getting Started
+Follow these steps to get the app up and running locally after cloning the repository:
+
+1. Clone the Repository
+Clone the repository to your local machine:
+
+cd poll-voting-backend
+
+2. Set Up Configuration
+Copy the Example Configuration
+
+Create the application.properties next to application-example.properties and copy the application-example.properties file contents to application.properties:
+
+Open application.properties and update the following properties with the values I provide
+
+Database Configuration:
+
+spring.datasource.url=jdbc:mysql://localhost:3306/mydb (update with your database URL)
+spring.datasource.username=your_db_user (replace with your DB username)
+spring.datasource.password=your_db_password (replace with your DB password)
+
+3. Build and Run the Application
+Once you've updated your configuration, you can run the app using Maven (you will need to have Maven installed):
+
+mvn spring-boot:run
+
+This will start the application on the default port (usually 8080).
+
+4. Access the App
+Once the app is running, you can access it at http://localhost:8080.
