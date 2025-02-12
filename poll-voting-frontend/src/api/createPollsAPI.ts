@@ -9,7 +9,7 @@ export const createPoll = async (question: string, options: string[]) => {
       },
       body: JSON.stringify({
         question,
-        options: options.map((text) => ({ text })), // Format options correctly
+        options: options.map((text) => ({ text })),
       }),
     });
 

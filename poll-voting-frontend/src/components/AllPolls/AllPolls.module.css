@@ -76,7 +76,7 @@
     border: 2px solid red;
     font-size: 1rem;
     cursor: pointer;
-    margin-top: 5px; /* Space between poll button and "X" button */
+    margin-top: 5px;
     padding: 6px 10px;
     border-radius: 50%;
     transition: color 0.2s, border 0.2s;

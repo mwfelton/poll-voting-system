@@ -57,7 +57,6 @@ const CreatePoll: React.FC<CreatePollProps> = ({ setShowCreatePoll, handleFetchP
       <h3>Create Your Poll!</h3>
       {message && <p className={styles.voteMessage}>{message}</p>}
       <div className={styles.formGroup}>
-        {/* <label>Poll Name</label> */}
         <input
           type="text"
           value={pollName}
@@ -68,9 +67,7 @@ const CreatePoll: React.FC<CreatePollProps> = ({ setShowCreatePoll, handleFetchP
       </div>
 
       <div className={styles.optionsContainer}>
-        {/* <label>Poll Options</label> */}
         <h4>Your Options</h4>
-
         {options.map((option, index) => (
           <div key={index} className={styles.optionGroup}>
             <input
